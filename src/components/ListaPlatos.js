@@ -18,7 +18,8 @@ margin-top: .8em;
 function Listaplatos() {
   const menuList = useSelector((state) => {
   if('' !== state.comidaSeleccionada){ return state.menuFiltradoPorComida};
-    return state.menu;
+  if(state.filtradoPorNombre) { return state.menuFiltradoPorNombre};
+  return state.menu;
   })
   return (
     <ListaplatosStyled>

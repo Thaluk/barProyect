@@ -22,6 +22,10 @@ const reducer = (state = initialState, action) => {
     const menuFiltradoPorComida = state.menu.filter((comida) => comida.comida === comidaSeleccionada)
     return {...state, menuFiltradoPorComida, comidaSeleccionada: comidaSeleccionada}
 
+  case 'FILTER_BY_NAME':
+    const menuFiltradoPorNombre = state.menu.filter((nombre) => nombre.nombre.toLowerCase().includes(action.payload.toLowerCase()))
+    return {...state, menuFiltradoPorComida: [], comidaSeleccionada: '', menuFiltradoPorNombre, filtradoPorNombre: true}
+
   default:
     return state;
   }

@@ -4,3 +4,10 @@ export function FiltroPorPlatos (comidaSeleccionada) {
   payload: {comidaSeleccionada},
   }
 }
+
+export function FiltroPorNombre (payload) {
+  return {
+    type: 'FILTER_BY_NAME',
+    payload: payload
+  }
+}
